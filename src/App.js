@@ -1,15 +1,18 @@
 import React from "react";
-import UserPage from "./pages/UserPage/UserPage/UserPage";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import UsersPage1 from "./pages/UserPage/UsersPage/UsersPage1";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Menu from "./Menu/Menu";
+import MainPage from "./pages/MainPage/MainPage";
+import SecondPage from "./pages/secondPage/SecondPage";
 const App = () => {
   return (
     <BrowserRouter>
-        <Routes>
-            <Route index element={<UserPage/>}/>
-            <Route path="/user/:userId" element={<UsersPage1/>}/>
-        </Routes>
+     <Menu/>
+      <Routes>
+        <Route index element={<MainPage />} />
+          <Route path="/users" element={<SecondPage />} />
+
+      </Routes>
     </BrowserRouter>
   );
 };
